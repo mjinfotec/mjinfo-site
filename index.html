@@ -4,263 +4,276 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MJ Informática | Tecnologia & Segurança Digital</title>
-  <meta name="description" content="Suporte em TI, redes, backups e segurança digital. Atendimento profissional com foco em confiabilidade e proteção de dados." />
-  <meta name="theme-color" content="#0A2342" />
-  <link rel="preload" href="assets/style.css" as="style" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" href="assets/logo-mj.svg" type="image/svg+xml" />
+  <meta name="description" content="MJ Informática em Castro-PR: suporte técnico empresarial, backup em nuvem, proteção digital e infraestrutura de redes." />
+  <link rel="icon" href="assets/logo-mjinfo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-
-  <header class="site-header">
-    <div class="container header-grid">
+  <div class="container">
+    <header class="header">
       <div class="brand">
-        <img class="brand-logo" src="assets/logo-mj.svg" alt="Logo MJ Informática" />
-        <div class="brand-text">
-          <div class="brand-name">MJ INFORMÁTICA</div>
-          <div class="brand-tag">Tecnologia • Segurança • Confiança</div>
+        <img src="assets/logo-mjinfo.png" alt="Logo MJ Informática" />
+        <div>
+          <h1>MJ Informática</h1>
+          <p>Tecnologia & Segurança Digital • Castro – PR</p>
         </div>
       </div>
-
       <nav class="nav">
         <a href="#servicos">Serviços</a>
-        <a href="#diferenciais">Diferenciais</a>
+        <a href="#diagnostico">Diagnóstico</a>
         <a href="#contato">Contato</a>
-        <a class="btn btn-outline" href="#whatsapp">WhatsApp</a>
       </nav>
+    </header>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="mobile-nav" id="mobileNav" hidden>
-      <div class="container">
-        <a href="#servicos">Serviços</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#contato">Contato</a>
-        <a class="btn" href="#whatsapp">Falar no WhatsApp</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="conteudo">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Suporte em TI com foco em proteção</p>
-          <h1>Seu ambiente de TI mais <span class="accent">seguro</span>, estável e bem cuidado.</h1>
-          <p class="lead">
-            Redes, backups, manutenção e segurança digital para empresas e famílias.
-            Atendimento direto, claro e com prioridade em confiabilidade.
-          </p>
+      <div class="hero-card">
+        <h2>TI com segurança, clareza e atendimento profissional.</h2>
+        <p class="lead">Soluções sob medida para empresas e famílias: backup seguro, suporte técnico, proteção digital e infraestrutura.</p>
 
-          <div class="cta-row" id="whatsapp">
-            <!-- Troque o número no link do WhatsApp quando quiser -->
-            <a class="btn" href="https://wa.me/55SEU_NUMERO_AQUI?text=Olá%20Miguel!%20Quero%20um%20orçamento%20da%20MJ%20Informática." target="_blank" rel="noopener">
-              Falar no WhatsApp
-            </a>
-            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
-          </div>
-
-          <div class="trust">
-            <div class="trust-item">
-              <div class="trust-num">+10</div>
-              <div class="trust-label">anos em TI</div>
-            </div>
-            <div class="trust-item">
-              <div class="trust-num">3-2-1</div>
-              <div class="trust-label">backup bem feito</div>
-            </div>
-            <div class="trust-item">
-              <div class="trust-num">A+</div>
-              <div class="trust-label">padrão de segurança</div>
-            </div>
-          </div>
+        <div class="badges">
+          <span class="badge">🔐 Segurança de dados</span>
+          <span class="badge">☁️ Backup em nuvem</span>
+          <span class="badge">🧑‍💻 Suporte técnico</span>
+          <span class="badge">🌐 Redes</span>
         </div>
 
-        <div class="hero-card">
-          <div class="card">
-            <h2>Diagnóstico rápido</h2>
-            <p>
-              Diga o que você precisa e eu retorno com um plano objetivo (com etapas e valores, quando aplicável).
-            </p>
-            <form class="form" id="formContato">
-              <label>
-                Seu nome
-                <input name="nome" required placeholder="Ex.: Solange" />
-              </label>
-              <label>
-                Seu e-mail
-                <input type="email" name="email" required placeholder="exemplo@dominio.com" />
-              </label>
-              <label>
-                O que você precisa?
-                <textarea name="mensagem" rows="4" required placeholder="Ex.: backup automático + relatório mensal..."></textarea>
-              </label>
-              <button class="btn" type="submit">Gerar mensagem</button>
-              <p class="form-hint">
-                Isso não envia e-mail automaticamente. Ele só gera um texto pronto para você copiar e mandar.
-              </p>
-            </form>
-            <div class="output" id="output" hidden>
-              <div class="output-header">
-                <strong>Mensagem pronta</strong>
-                <button class="btn btn-outline btn-small" id="copyBtn" type="button">Copiar</button>
-              </div>
-              <pre id="outputText"></pre>
-            </div>
+        <div class="cta">
+          <a class="btn primary" href="https://wa.me/5542984187790?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20MJ%20Inform%C3%A1tica.%20Quero%20um%20diagn%C3%B3stico%20r%C3%A1pido%20do%20meu%20ambiente%20%28backup/rede/seguran%C3%A7a/suporte%29." target="_blank" rel="noopener">📲 Falar no WhatsApp</a>
+          <a class="btn secondary" href="#servicos">Ver serviços</a>
+        </div>
+
+        <p class="help">Atendimento comercial: <strong>(42) 98418-7790</strong> • E-mail: <strong>comercial@mjinfo.tec.br</strong></p>
+      </div>
+
+      <div class="hero-illustration">
+        <div class="frame">
+          <img src="assets/service-hardware.png" alt="Ilustração de tecnologia e equipamentos" />
+          <div class="mini">
+            <span>Pronta entrega (itens selecionados)</span>
+            <span>Pedido rápido (técnicos)</span>
+            <span>Orientação técnica</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="servicos">
-      <div class="container">
-        <div class="section-head">
-          <h2>Serviços</h2>
-          <p>Pacotes e atendimentos sob medida, do básico ao avançado.</p>
+    <section id="servicos" class="section">
+      <h3>Serviços</h3>
+      <p class="sub">Catálogo alinhado ao WhatsApp Business. Atendimento profissional e linguagem objetiva.</p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="img"><img src="assets/service-backup.png" alt="Backup em nuvem" /></div>
+          <div class="body">
+            <h4>☁️ Backup em Nuvem Empresarial (Wasabi)</h4>
+            <p>Proteja dados contra perdas, falhas e ataques. Rotina automatizada, monitoramento e recuperação rápida.</p>
+            <ul>
+              <li>Backup automático e seguro</li>
+              <li>Relatórios e acompanhamento</li>
+              <li>Restauração sob demanda</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img"><img src="assets/service-family.png" alt="Proteção digital familiar" /></div>
+          <div class="body">
+            <h4>🔐 Proteção Digital Familiar</h4>
+            <p>Configuração de segurança e orientação para reduzir riscos online e melhorar o uso consciente da tecnologia.</p>
+            <ul>
+              <li>Controle parental</li>
+              <li>Proteção contra golpes</li>
+              <li>Boas práticas e ajustes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img"><img src="assets/service-support.png" alt="Suporte técnico empresarial" /></div>
+          <div class="body">
+            <h4>🧑‍💻 Suporte Técnico Empresarial</h4>
+            <p>Atendimento remoto e presencial, com foco em agilidade, registro e solução definitiva.</p>
+            <ul>
+              <li>Preventivo e corretivo</li>
+              <li>Padronização e organização</li>
+              <li>Suporte para usuários e ambiente</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img"><img src="assets/service-network.png" alt="Configuração de redes" /></div>
+          <div class="body">
+            <h4>🌐 Configuração de Redes e Infraestrutura</h4>
+            <p>Wi‑Fi, rede cabeada, organização e melhorias para estabilidade e segurança do ambiente.</p>
+            <ul>
+              <li>Roteadores, switches e Wi‑Fi</li>
+              <li>Segmentação e boas práticas</li>
+              <li>Infraestrutura sob medida</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img"><img src="assets/service-hardware.png" alt="Peças e periféricos" /></div>
+          <div class="body">
+            <h4>🖥️ Peças, Equipamentos e Periféricos</h4>
+            <p>Venda sob orientação técnica, com foco em compatibilidade, custo‑benefício e garantia.</p>
+            <ul>
+              <li>SSD, RAM, fontes, cabos e acessórios</li>
+              <li>Teclados, mouses e periféricos</li>
+              <li>Pedido rápido e pronta entrega (selecionados)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img"><img src="assets/service-backup.png" alt="Diagnóstico" /></div>
+          <div class="body">
+            <h4>🔎 Diagnóstico Rápido</h4>
+            <p>Preencha o diagnóstico e clique em <strong>Gerar mensagem</strong> para abrir o WhatsApp com seu pedido pronto.</p>
+            <ul>
+              <li>Agiliza o atendimento</li>
+              <li>Evita retrabalho e perguntas repetidas</li>
+              <li>Você controla o envio</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="diagnostico" class="section">
+      <h3>Diagnóstico rápido</h3>
+      <p class="sub">Em poucos campos, geramos uma mensagem completa para você enviar pelo WhatsApp.</p>
+
+      <div class="two-col">
+        <div class="panel">
+          <h4>📋 Formulário</h4>
+
+          <div class="field">
+            <label for="tipo">Tipo</label>
+            <select id="tipo">
+              <option value="Empresa">Empresa</option>
+              <option value="Residência">Residência</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="area">Área de interesse</label>
+            <select id="area">
+              <option value="Backup em nuvem">Backup em nuvem</option>
+              <option value="Suporte técnico">Suporte técnico</option>
+              <option value="Proteção digital familiar">Proteção digital familiar</option>
+              <option value="Redes e infraestrutura">Redes e infraestrutura</option>
+              <option value="Peças e periféricos">Peças e periféricos</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="detalhes">Detalhes (opcional)</label>
+            <textarea id="detalhes" placeholder="Ex.: Quantos computadores? Tem servidor? Precisa backup da pasta Documentos?"></textarea>
+          </div>
+
+          <div class="cta">
+            <button class="btn primary" id="gerar" type="button">Gerar mensagem no WhatsApp</button>
+            <button class="btn secondary" id="copiar" type="button">Copiar texto</button>
+          </div>
+
+          <p class="help">Nada é enviado automaticamente. Você revisa e confirma o envio no WhatsApp.</p>
         </div>
 
-        <div class="grid cards">
-          <article class="card card-mini">
-            <h3>Backup & Recuperação</h3>
-            <p>Rotina automática, 3-2-1, testes de restauração e relatórios.</p>
-            <ul>
-              <li>Rclone / Wasabi / OneDrive</li>
-              <li>Retenção e versionamento</li>
-              <li>Plano de desastre (DR)</li>
-            </ul>
-          </article>
-
-          <article class="card card-mini">
-            <h3>Infra & Redes</h3>
-            <p>Wi‑Fi, cabeamento, switches, VLANs e organização do ambiente.</p>
-            <ul>
-              <li>Melhoria de cobertura</li>
-              <li>Padronização e documentação</li>
-              <li>Monitoramento básico</li>
-            </ul>
-          </article>
-
-          <article class="card card-mini">
-            <h3>Segurança Digital</h3>
-            <p>Boas práticas, hardening, MFA e proteção contra golpes.</p>
-            <ul>
-              <li>Checklist de segurança</li>
-              <li>Proteção para família</li>
-              <li>Treinamento rápido</li>
-            </ul>
-          </article>
-
-          <article class="card card-mini">
-            <h3>Suporte & Manutenção</h3>
-            <p>Atendimento remoto/presencial, upgrades e padronização.</p>
-            <ul>
-              <li>Windows, Office e drivers</li>
-              <li>Inventário e rotinas</li>
-              <li>Contratos mensais</li>
-            </ul>
-          </article>
+        <div class="panel">
+          <h4>📝 Mensagem gerada</h4>
+          <textarea id="saida" readonly></textarea>
+          <p class="small">Dica: quanto mais contexto você informar, mais rápido fica o atendimento (sem “vai e volta”).</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="diferenciais">
-      <div class="container">
-        <div class="section-head">
-          <h2>Diferenciais</h2>
-          <p>O que você pode esperar do meu atendimento.</p>
-        </div>
+    <section id="contato" class="section">
+      <h3>Contato</h3>
+      <p class="sub">Atendimento via WhatsApp Business e e-mail comercial.</p>
 
-        <div class="grid features">
-          <div class="feature">
-            <div class="icon">🛡️</div>
-            <h3>Segurança primeiro</h3>
-            <p>Decisões pensando em risco, continuidade e proteção de dados.</p>
-          </div>
-          <div class="feature">
-            <div class="icon">🧾</div>
-            <h3>Documentação clara</h3>
-            <p>Registro do que foi feito, como manter e como recuperar.</p>
-          </div>
-          <div class="feature">
-            <div class="icon">⚙️</div>
-            <h3>Automação prática</h3>
-            <p>Rotinas que rodam sozinhas e reduzem falhas humanas.</p>
-          </div>
-          <div class="feature">
-            <div class="icon">🤝</div>
-            <h3>Atendimento direto</h3>
-            <p>Você fala com quem resolve. Sem enrolação e com prioridade.</p>
-          </div>
+      <div class="two-col">
+        <div class="panel">
+          <h4>📲 WhatsApp</h4>
+          <p><strong>(42) 98418-7790</strong></p>
+          <p><a class="btn primary" href="https://wa.me/5542984187790?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20MJ%20Inform%C3%A1tica.%20Quero%20um%20diagn%C3%B3stico%20r%C3%A1pido%20do%20meu%20ambiente%20%28backup/rede/seguran%C3%A7a/suporte%29." target="_blank" rel="noopener">Abrir conversa</a></p>
         </div>
+        <div class="panel">
+          <h4>✉️ E-mail</h4>
+          <p><strong>comercial@mjinfo.tec.br</strong></p>
+          <p><a class="btn secondary" href="mailto:comercial@mjinfo.tec.br">Enviar e-mail</a></p>
+          <p class="small">CNPJ: 30.760.765/0001-90</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        © 2026 MJ Informática • Castro – PR
       </div>
     </section>
 
-    <section class="section" id="contato">
-      <div class="container contact-grid">
-        <div class="contact-copy">
-          <h2>Contato</h2>
-          <p>
-            Se preferir, use o WhatsApp. Para empresa, posso montar proposta e contrato mensal.
-          </p>
+  </div>
 
-          <div class="contact-cards">
-            <div class="contact-card">
-              <div class="k">WhatsApp</div>
-              <div class="v"><a href="https://wa.me/55SEU_NUMERO_AQUI" target="_blank" rel="noopener">+55 (xx) xxxxx‑xxxx</a></div>
-            </div>
-            <div class="contact-card">
-              <div class="k">E-mail</div>
-              <div class="v"><a href="mailto:comercial@mjinfo.tec.br">comercial@mjinfo.tec.br</a></div>
-            </div>
-            <div class="contact-card">
-              <div class="k">Atendimento</div>
-              <div class="v">Remoto e presencial (sob agenda)</div>
-            </div>
-          </div>
+<script>
+(function () {
+  const WHATSAPP_NUMBER = "5542984187790";
+  const btnGerar = document.getElementById("gerar");
+  const btnCopiar = document.getElementById("copiar");
+  const saida = document.getElementById("saida");
 
-          <p class="small">
-            Dica: quando o site estiver no ar, você pode trocar o “SEU_NUMERO_AQUI” nos links do WhatsApp.
-          </p>
-        </div>
+  function buildPlainText() {
+    const tipo = document.getElementById("tipo").value;
+    const area = document.getElementById("area").value;
+    const detalhes = document.getElementById("detalhes").value.trim();
 
-        <div class="card">
-          <h3>Checklist gratuito</h3>
-          <p>Baixe um checklist simples para deixar seu PC/empresa mais seguro (PDF).</p>
-          <a class="btn btn-outline" href="#" onclick="alert('Quando quiser, eu gero esse PDF pra você e colocamos aqui.'); return false;">
-            Quero o checklist
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+    let msg = "Olá! Vim pelo site da MJ Informática.\\n" +
+              "Tipo: " + tipo + "\\n" +
+              "Interesse: " + area + "\\n";
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img class="footer-logo" src="assets/logo-mj.svg" alt="" />
-        <div>
-          <div class="footer-title">MJ Informática</div>
-          <div class="footer-sub">Tecnologia & Segurança Digital</div>
-        </div>
-      </div>
+    if (detalhes) {
+      msg += "Detalhes: " + detalhes + "\\n";
+    }
 
-      <div class="footer-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#contato">Contato</a>
-      </div>
+    msg += "\\nPode me orientar com o melhor caminho e um orçamento?";
+    return msg;
+  }
 
-      <div class="footer-note">
-        © <span id="year"></span> MJ Informática. Todos os direitos reservados.
-      </div>
-    </div>
-  </footer>
+  function buildEncodedText() {
+    return encodeURIComponent(buildPlainText());
+  }
 
-  <script src="assets/script.js"></script>
+  function updatePreview() {
+    saida.value = buildPlainText();
+  }
+
+  ["tipo", "area", "detalhes"].forEach((id) => {
+    const el = document.getElementById(id);
+    el.addEventListener("input", updatePreview);
+    el.addEventListener("change", updatePreview);
+  });
+
+  updatePreview();
+
+  btnGerar.addEventListener("click", () => {
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + buildEncodedText();
+    window.open(url, "_blank", "noopener");
+  });
+
+  btnCopiar.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(saida.value);
+      btnCopiar.textContent = "✅ Copiado!";
+      setTimeout(() => btnCopiar.textContent = "Copiar texto", 1500);
+    } catch (e) {
+      saida.select();
+      document.execCommand("copy");
+      btnCopiar.textContent = "✅ Copiado!";
+      setTimeout(() => btnCopiar.textContent = "Copiar texto", 1500);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
