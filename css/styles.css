@@ -66,4 +66,7 @@ a{color:inherit}
   .nav{display:none}
   .hero h2{font-size:28px}
   .hero-illustration img{height:220px}
+  .brand img {
+    height: 70px;
+}
 }
