@@ -1,282 +1,264 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MJ Informática | Tecnologia & Segurança Digital</title>
-  <meta name="description" content="MJ Informática em Castro-PR: backup em nuvem, proteção digital, infraestrutura de redes e licenciamento Microsoft." />
-  <link rel="icon" href="assets/logo-mjinfo.png" />
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ PROTEÇÃO DIGITAL | Atalaia Digital em Castro - Proteção Familiar & TI</title>
+    <style>
+        :root {
+            --primary: #22c55e; 
+            --secondary: #1e3a8a; 
+            --accent: #5e84e2; 
+            --bg-light: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo img { 
+            height: 90px; 
+            width: auto; 
+            display: block;
+        }
+
+        .location-badge {
+            background: rgba(30, 58, 138, 0.05);
+            color: var(--secondary);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), 
+                              url('farol-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-main { background: var(--secondary); color: white; border: 2px solid var(--secondary); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: rgba(255,255,255,0.9); }
+        
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        section { padding: 120px 0; }
+        h2 { font-size: 3rem; color: var(--secondary); text-align: center; margin-bottom: 50px; letter-spacing: -1px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 45px;
+            border-radius: 20px;
+            border-bottom: 5px solid var(--primary);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .card:hover { background: #f1f5f9; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+
+        .card h3 { color: var(--secondary); margin-top: 0; font-size: 1.6rem; }
+        .card ul { padding-left: 20px; color: var(--text-muted); font-size: 1.05rem; }
+        .card ul li { margin-bottom: 12px; }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            z-index: 2000;
+            font-size: 1.15rem;
+            transition: 0.3s;
+        }
+
+        footer { background: #f8fafc; padding: 80px 0; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer-logo img { height: 70px; margin-bottom: 30px; }
+        .footer-link { color: var(--secondary); text-decoration: none; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero { height: auto; padding: 150px 20px; }
+            .grid { grid-template-columns: 1fr; }
+            .logo img { height: 70px; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="brand">
-        <img src="assets/logo-mjinfo.png" alt="Logo MJ Informática" />
-        <div>
-          <h1>MJ Informática</h1>
-          <p>Tecnologia & Segurança Digital • Castro – PR</p>
+
+<header>
+    <div class="container nav-content">
+        <div class="logo">
+            <img src="logo_premium.png" alt="MJ Proteção Digital - Castro">
         </div>
-      </div>
-      <nav class="nav">
-        <a href="#servicos">Serviços</a>
-        <a href="#diagnostico">Diagnóstico</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
+        <div class="location-badge">Castro - PR</div>
+    </div>
+</header>
 
-    <section class="hero">
-      <div class="hero-card">
-        <h2>TI com segurança, clareza e atendimento profissional.</h2>
-        <p class="lead">Soluções sob medida para empresas e famílias: backup seguro, proteção digital, infraestrutura e licenciamento Microsoft.</p>
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Tecnologia com Propósito & Segurança Digital</h1>
+        <p>Consultoria cristã de proteção digital familiar e soluções de TI de alta performance em Castro e região.</p>
+        <a href="#familia" class="btn btn-main">Proteger Família</a>
+        <a href="#ti" class="btn btn-outline">Serviços de TI</a>
+    </div>
+</section>
 
-        <div class="badges">
-          <span class="badge">🔐 Segurança de dados</span>
-          <span class="badge">☁️ Backup em nuvem</span>
-          <span class="badge">🧾 Licenciamento Microsoft</span>
-          <span class="badge">🌐 Redes</span>
+<section id="familia" class="container">
+    <h2>Proteção Digital Familiar</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🛡️ Diagnóstico de Risco</h3>
+            <p>Mapeamento completo da exposição digital da sua casa.</p>
+            <ul>
+                <li>Análise de vulnerabilidades na rede Wi-Fi e dispositivos móveis.</li>
+                <li>Avaliação dos hábitos de uso e exposição de cada membro da família.</li>
+                <li>Relatório técnico com recomendações imediatas.</li>
+            </ul>
         </div>
-
-        <div class="cta">
-          <a class="btn primary" href="https://wa.me/5542984187790?text=Ol%C3%A1%21+Vim+pelo+site+da+MJ+Inform%C3%A1tica.+Quero+um+diagn%C3%B3stico+r%C3%A1pido+do+meu+ambiente+%28backup/rede/seguran%C3%A7a/licenciamento%29." target="_blank" rel="noopener">📲 Falar no WhatsApp</a>
-          <a class="btn secondary" href="#servicos">Ver serviços</a>
+        <div class="card">
+            <h3>📱 Controle Parental</h3>
+            <p>Configuração técnica profissional de barreiras e monitoramento.</p>
+            <ul>
+                <li>Instalação e ajuste fino de softwares parentais (Qustodio, AirDroid).</li>
+                <li>Filtros de conteúdo e restrições por faixa etária em TVs e computadores.</li>
+                <li>Criação de perfis seguros e monitoramento consciente.</li>
+            </ul>
         </div>
-
-        <p class="help">Atendimento comercial: <strong>(42) 98418-7790</strong> • E-mail: <strong>comercial@mjinfo.tec.br</strong></p>
-      </div>
-
-      <div class="hero-illustration">
-        <div class="frame">
-          <img src="assets/service-hardware.png" alt="Ilustração de tecnologia e equipamentos" />
-          <div class="mini">
-            <span>Pronta entrega (itens selecionados)</span>
-            <span>Pedido rápido (técnicos)</span>
-            <span>Orientação técnica</span>
-          </div>
+        <div class="card">
+            <h3>🤝 Mentoria</h3>
+            <p>Capacitação para uma gestão familiar saudável e equilibrada.</p>
+            <ul>
+                <li>Estratégias baseadas em princípios para gestão de tempo de tela e diálogos.</li>
+                <li>Orientação contínua conforme os filhos crescem e as tecnologias mudam.</li>
+            </ul>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section id="servicos" class="section">
-      <h3>Serviços</h3>
-      <p class="sub">Catálogo alinhado ao WhatsApp Business. Atendimento profissional e linguagem objetiva.</p>
-
-      <div class="grid">
-        <article class="card">
-          <div class="img"><img src="assets/service-backup.png" alt="Backup em nuvem" /></div>
-          <div class="body">
-            <h4>☁️ Backup em Nuvem Empresarial</h4>
-            <p>Proteja dados contra perdas, falhas e ataques. Rotina automatizada, monitoramento e recuperação rápida.</p>
-            <ul>
-              <li>Backup automático e seguro</li>
-              <li>Relatórios e acompanhamento</li>
-              <li>Restauração sob demanda</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img"><img src="assets/service-family.png" alt="Proteção digital familiar" /></div>
-          <div class="body">
-            <h4>🔐 Proteção Digital Familiar</h4>
-            <p>Configuração de segurança e orientação para reduzir riscos online e melhorar o uso consciente da tecnologia.</p>
-            <ul>
-              <li>Controle parental</li>
-              <li>Proteção contra golpes</li>
-              <li>Boas práticas e ajustes</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img"><img src="assets/service-licensing.png" alt="Licenciamento e Regularização Microsoft" /></div>
-          <div class="body">
-            <h4>🧾 Licenciamento e Regularização Microsoft</h4>
-            <p>Regularização e adequação de licenças Microsoft (Windows, Office, Visio e MS Project).</p>
-            <ul>
-              <li>Orientação em boas práticas</li>
-              <li>Conformidade legal e organização do ambiente corporativo</li>
-              <li>Redução de riscos</li>
-              <li>Solicite sua cotação</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img"><img src="assets/service-network.png" alt="Configuração de redes" /></div>
-          <div class="body">
-            <h4>🌐 Configuração de Redes e Infraestrutura</h4>
-            <p>Wi‑Fi, rede cabeada, organização e melhorias para estabilidade e segurança do ambiente.</p>
-            <ul>
-              <li>Roteadores, switches e Wi‑Fi</li>
-              <li>Segmentação e boas práticas</li>
-              <li>Infraestrutura sob medida</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img"><img src="assets/service-hardware.png" alt="Peças e periféricos" /></div>
-          <div class="body">
-            <h4>🖥️ Peças, Equipamentos e Periféricos</h4>
-            <p>Venda sob orientação técnica, com foco em compatibilidade, custo‑benefício e garantia.</p>
-            <ul>
-              <li>SSD, RAM, fontes, cabos e acessórios</li>
-              <li>Teclados, mouses e periféricos</li>
-              <li>Pedido rápido e pronta entrega (selecionados)</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img"><img src="assets/service-backup.png" alt="Diagnóstico" /></div>
-          <div class="body">
-            <h4>🔎 Diagnóstico Rápido</h4>
-            <p>Preencha o diagnóstico e clique em <strong>Gerar mensagem</strong> para abrir o WhatsApp com seu pedido pronto.</p>
-            <ul>
-              <li>Agiliza o atendimento</li>
-              <li>Evita retrabalho e perguntas repetidas</li>
-              <li>Você controla o envio</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="diagnostico" class="section">
-      <h3>Diagnóstico rápido</h3>
-      <p class="sub">Em poucos campos, geramos uma mensagem completa para você enviar pelo WhatsApp.</p>
-
-      <div class="two-col">
-        <div class="panel">
-          <h4>📋 Formulário</h4>
-
-          <div class="field">
-            <label for="tipo">Tipo</label>
-            <select id="tipo">
-              <option value="Empresa">Empresa</option>
-              <option value="Residência">Residência</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="area">Área de interesse</label>
-            <select id="area">
-              <option value="Backup em nuvem">Backup em nuvem</option>
-              <option value="Licenciamento Microsoft">Licenciamento Microsoft</option>
-              <option value="Proteção digital familiar">Proteção digital familiar</option>
-              <option value="Redes e infraestrutura">Redes e infraestrutura</option>
-              <option value="Peças e periféricos">Peças e periféricos</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="detalhes">Detalhes (opcional)</label>
-            <textarea id="detalhes" placeholder="Ex.: Quantos computadores? Tem servidor? Precisa backup da pasta Documentos?"></textarea>
-          </div>
-
-          <div class="cta">
-            <button class="btn primary" id="gerar" type="button">Gerar mensagem no WhatsApp</button>
-            <button class="btn secondary" id="copiar" type="button">Copiar texto</button>
-          </div>
-
-          <p class="help">Nada é enviado automaticamente. Você revisa e confirma o envio no WhatsApp.</p>
+<section id="ti" style="background: #f8fafc;">
+    <div class="container">
+        <h2>Serviços de TI Profissionais</h2>
+        <div class="grid">
+            <div class="card" style="background: white;">
+                <h3>☁️ Backup em Nuvem</h3>
+                <p>Proteção de dados contra perdas, falhas e ataques.</p>
+                <ul>
+                    <li>Backup automático e seguro</li>
+                    <li>Relatórios e monitoramento</li>
+                    <li>Restauração sob demanda</li>
+                </ul>
+            </div>
+            <div class="card" style="background: white;">
+                <h3>📜 Licenciamento Microsoft</h3>
+                <p>Regularização e adequação de licenças (Windows, Office, Visio).</p>
+                <ul>
+                    <li>Orientação em boas práticas corporativas</li>
+                    <li>Redução de riscos corporativos</li>
+                    <li>Solicite sua cotação</li>
+                </ul>
+            </div>
+            <div class="card" style="background: white;">
+                <h3>🖱️ Peças e Periféricos</h3>
+                <p>Venda sob orientação técnica, com foco em compatibilidade e custo-benefício.</p>
+                <ul>
+                    <li>SSD, RAM, fontes e cabos</li>
+                    <li>Teclados, mouses e acessórios</li>
+                    <li>Pedido rápido e pronta entrega</li>
+                </ul>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="panel">
-          <h4>📝 Mensagem gerada</h4>
-          <textarea id="saida" readonly></textarea>
-          <p class="small">Dica: quanto mais contexto você informar, mais rápido fica o atendimento (sem “vai e volta”).</p>
+<footer>
+    <div class="container">
+        <div class="footer-logo">
+            <img src="logo_premium.png" alt="MJ Proteção Digital Footer">
         </div>
-      </div>
-    </section>
+        <p><strong>Miguel Junior Prestes</strong> - Consultor e Atalaia Digital</p>
+        <p>📱 WhatsApp: <a href="https://wa.me/5542984187790" class="footer-link">(42) 98418-7790</a></p>
+        <p>✉️ E-mail: <a href="mailto:comercial@mjinfo.tec.br" class="footer-link">comercial@mjinfo.tec.br</a></p>
+        <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-muted);">© 2026 mjinfo.tec.br - Todos os direitos reservados.</p>
+    </div>
+</footer>
 
-    <section id="contato" class="section">
-      <h3>Contato</h3>
-      <p class="sub">Atendimento via WhatsApp Business e e-mail comercial.</p>
-
-      <div class="two-col">
-        <div class="panel">
-          <h4>📲 WhatsApp</h4>
-          <p><strong>(42) 98418-7790</strong></p>
-          <a href="https://api.whatsapp.com/send?phone=5542984187790&text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20MJ%20INFO&type=phone_number&app_absent=0" target="_blank" rel="noopener">
-  Abrir conversa
+<a href="https://wa.me/5542984187790?text=Olá Miguel, gostaria de agendar uma consultoria em Castro." class="whatsapp-float" target="_blank">
+    💬 Agendar Diagnóstico
 </a>
-        </div>
-        <div class="panel">
-          <h4>✉️ E-mail</h4>
-          <p><strong>comercial@mjinfo.tec.br</strong></p>
-          <p><a class="btn secondary" href="mailto:comercial@mjinfo.tec.br">Enviar e-mail</a></p>
-          <p class="small">CNPJ: 30.760.765/0001-90</p>
-        </div>
-      </div>
-
-      <div class="footer">
-        © 2026 MJ Informática • Castro – PR
-      </div>
-    </section>
-
-  </div>
-
-<script>
-(function () {
-  const WHATSAPP_NUMBER = "5542984187790";
-  const btnGerar = document.getElementById("gerar");
-  const btnCopiar = document.getElementById("copiar");
-  const saida = document.getElementById("saida");
-
-  function buildPlainText() {
-    const tipo = document.getElementById("tipo").value;
-    const area = document.getElementById("area").value;
-    const detalhes = document.getElementById("detalhes").value.trim();
-
-    let msg = "Olá! Vim pelo site da MJ Informática.\\n" +
-              "Tipo: " + tipo + "\\n" +
-              "Interesse: " + area + "\\n";
-
-    if (detalhes) {
-      msg += "Detalhes: " + detalhes + "\\n";
-    }
-
-    msg += "\\nPode me orientar com o melhor caminho e um orçamento?";
-    return msg;
-  }
-
-  function buildEncodedText() {
-    return encodeURIComponent(buildPlainText());
-  }
-
-  function updatePreview() {
-    saida.value = buildPlainText();
-  }
-
-  ["tipo", "area", "detalhes"].forEach((id) => {
-    const el = document.getElementById(id);
-    el.addEventListener("input", updatePreview);
-    el.addEventListener("change", updatePreview);
-  });
-
-  updatePreview();
-
-  btnGerar.addEventListener("click", () => {
-    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + buildEncodedText();
-    window.open(url, "_blank", "noopener");
-  });
-
-  btnCopiar.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(saida.value);
-      btnCopiar.textContent = "✅ Copiado!";
-      setTimeout(() => btnCopiar.textContent = "Copiar texto", 1500);
-    } catch (e) {
-      saida.select();
-      document.execCommand("copy");
-      btnCopiar.textContent = "✅ Copiado!";
-      setTimeout(() => btnCopiar.textContent = "Copiar texto", 1500);
-    }
-  });
-})();
-</script>
 
 </body>
 </html>
