@@ -1,264 +1,537 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MJ PROTEÇÃO DIGITAL | Atalaia Digital em Castro - Proteção Familiar & TI</title>
-    <style>
-        :root {
-            --primary: #22c55e; 
-            --secondary: #1e3a8a; 
-            --accent: #5e84e2; 
-            --bg-light: #ffffff;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MJ INFO | Farol Digital, Blindagem de Contas e Segurança Pessoal e Familiar em Castro-PR</title>
+  <meta name="description" content="MJ INFO oferece Farol Digital, Blindagem de Contas, proteção pessoal e familiar, análise de vazamentos, cofre de senhas e orientação prática para famílias em Castro-PR." />
+  <style>
+    :root {
+      --azul: #173a8f;
+      --azul-escuro: #0b1f4d;
+      --verde: #22c55e;
+      --verde-escuro: #16a34a;
+      --texto: #101828;
+      --cinza: #475467;
+      --fundo: #f5f8fc;
+      --card: #ffffff;
+      --borda: #dce6f2;
+      --sombra: 0 18px 45px rgba(16, 24, 40, 0.08);
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
 
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 15px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid #e2e8f0;
-        }
+    header {
+      background: #ffffff;
+      padding: 22px 0;
+      border-bottom: 1px solid #e6edf5;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      color: var(--azul-escuro);
+    }
+    .brand img { width: 96px; height: auto; display: block; }
+    .brand small { color: var(--cinza); font-weight: 500; }
+    .tag-local {
+      background: #f1f4fb;
+      color: var(--azul);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .nav .cta-small {
+      background: var(--verde);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(34,197,94,0.24);
+    }
 
-        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+    .hero {
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.88)),
+        url('farol-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid #e6edf5;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 46%, rgba(23,58,143,0.10), transparent 32%),
+        linear-gradient(90deg, rgba(34,197,94,0.08), transparent 35%, rgba(23,58,143,0.08));
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(115deg, transparent 0 48%, rgba(23,58,143,0.08) 49%, transparent 50%),
+        radial-gradient(circle, rgba(23,58,143,0.12) 1.5px, transparent 2px);
+      background-size: 220px 220px, 160px 160px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    .badge {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      color: var(--azul);
+      font-weight: 700;
+      background: #f1f4fb;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: clamp(42px, 5.4vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      margin: 0 auto 22px;
+      color: var(--azul);
+      max-width: 920px;
+    }
+    h1 span { color: var(--azul-escuro); }
+    .hero p {
+      font-size: clamp(18px, 2vw, 24px);
+      color: #101828;
+      max-width: 850px;
+      margin: 0 auto 34px;
+      font-weight: 600;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 26px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 2px solid transparent;
+      min-width: 180px;
+    }
+    .btn-primary { background: var(--azul); color: #ffffff; box-shadow: 0 16px 32px rgba(23,58,143,0.22); }
+    .btn-secondary { border-color: var(--verde); color: var(--verde-escuro); background: #ffffff; }
+    .btn:hover { transform: translateY(-2px); }
 
-        .logo img { 
-            height: 90px; 
-            width: auto; 
-            display: block;
-        }
+    .hero-card {
+      margin: 42px auto 0;
+      max-width: 940px;
+      background: rgba(255,255,255,0.90);
+      border: 1px solid var(--borda);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--sombra);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 22px;
+      text-align: left;
+      backdrop-filter: blur(8px);
+    }
+    .hero-card h2 {
+      grid-column: 1 / -1;
+      color: var(--azul);
+      font-size: 30px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .check {
+      color: var(--cinza);
+      background: #f8fbff;
+      border: 1px solid #e5edf7;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 15px;
+    }
+    .check strong { color: var(--verde); }
 
-        .location-badge {
-            background: rgba(30, 58, 138, 0.05);
-            color: var(--secondary);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
+    section { padding: 76px 0; }
+    .section-title { max-width: 880px; margin: 0 auto 42px; text-align: center; }
+    .section-title h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      color: var(--azul);
+      line-height: 1.12;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+    .section-title p { color: var(--cinza); font-size: 19px; }
 
-        .hero {
-            position: relative;
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-image: linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), 
-                              url('farol-hero.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--borda);
+      border-radius: 24px;
+      padding: 32px;
+      min-height: 290px;
+      box-shadow: var(--sombra);
+      transition: 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--azul), var(--verde));
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 22px 55px rgba(16,24,40,0.12); }
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #eef5ff;
+      color: var(--azul);
+      margin-bottom: 18px;
+      font-size: 26px;
+      font-weight: 800;
+      border: 1px solid #deebff;
+    }
+    .card h3 { font-size: 24px; margin-bottom: 12px; color: var(--azul-escuro); line-height: 1.25; }
+    .card p, .card li { color: var(--cinza); font-size: 16px; }
+    .card ul { margin-left: 18px; margin-top: 12px; }
+    .card li { margin-bottom: 8px; }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            text-shadow: 0 2px 10px rgba(255,255,255,0.8);
-        }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .panel {
+      background: #ffffff;
+      border: 1px solid var(--borda);
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: var(--sombra);
+    }
+    .panel h3 { font-size: 30px; margin-bottom: 14px; color: var(--azul); }
+    .panel p, .panel li { color: var(--cinza); }
+    .panel ul { margin-left: 20px; margin-top: 12px; }
 
-        .hero-content p {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            max-width: 750px;
-            margin: 0 auto 40px;
-            font-weight: 500;
-        }
+    .cta-final {
+      text-align: center;
+      background:
+        linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.94)),
+        url('farol-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--borda);
+      border-radius: 34px;
+      padding: 54px 28px;
+      box-shadow: var(--sombra);
+    }
+    .cta-final h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; color: var(--azul); }
+    .cta-final p { color: var(--cinza); max-width: 760px; margin: 0 auto 28px; font-size: 19px; }
 
-        .btn {
-            display: inline-block;
-            padding: 18px 36px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin: 10px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
+    .whatsapp-float {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      background: var(--verde);
+      color: #ffffff;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 18px 40px rgba(34,197,94,0.35);
+      z-index: 20;
+    }
 
-        .btn-main { background: var(--secondary); color: white; border: 2px solid var(--secondary); }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: rgba(255,255,255,0.9); }
-        
-        .btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+    footer {
+      padding: 54px 0;
+      color: var(--cinza);
+      border-top: 1px solid #e6edf5;
+      font-size: 15px;
+      background: #f8fbff;
+      text-align: center;
+    }
+    footer .footer-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-direction: column;
+    }
 
-        section { padding: 120px 0; }
-        h2 { font-size: 3rem; color: var(--secondary); text-align: center; margin-bottom: 50px; letter-spacing: -1px; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            background: #f8fafc;
-            padding: 45px;
-            border-radius: 20px;
-            border-bottom: 5px solid var(--primary);
-            transition: 0.3s;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
-        .card:hover { background: #f1f5f9; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
-
-        .card h3 { color: var(--secondary); margin-top: 0; font-size: 1.6rem; }
-        .card ul { padding-left: 20px; color: var(--text-muted); font-size: 1.05rem; }
-        .card ul li { margin-bottom: 12px; }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            padding: 16px 30px;
-            border-radius: 50px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            z-index: 2000;
-            font-size: 1.15rem;
-            transition: 0.3s;
-        }
-
-        footer { background: #f8fafc; padding: 80px 0; text-align: center; border-top: 1px solid #e2e8f0; }
-        .footer-logo img { height: 70px; margin-bottom: 30px; }
-        .footer-link { color: var(--secondary); text-decoration: none; font-weight: bold; }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .hero { height: auto; padding: 150px 20px; }
-            .grid { grid-template-columns: 1fr; }
-            .logo img { height: 70px; }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding: 84px 0; }
+      .hero-card { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .brand img { width: 82px; }
+      .tag-local { display: none; }
+      .nav .cta-small { display: none; }
+      .whatsapp-float { right: 16px; bottom: 16px; padding: 14px 18px; font-size: 14px; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo_premium.png" alt="Logo MJ Proteção Digital" style="width:340px;">
+      </div>
+      <span class="tag-local">Castro - PR</span>
+      <a class="cta-small" href="https://wa.me/5542984187790?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20prote%C3%A7%C3%A3o%20digital%20e%20Blindagem%20Digital." target="_blank">Agendar Diagnóstico</a>
+    </div>
+  </header>
 
-<header>
-    <div class="container nav-content">
-        <div class="logo">
-            <img src="logo_premium.png" alt="MJ Proteção Digital - Castro">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Farol Digital • Proteção Pessoal e Familiar</span>
+          <h1>O Farol que guia sua <span>blindagem digital</span>, pessoal e familiar.</h1>
+          <p>A MJ INFO ajuda você a enxergar riscos invisíveis, corrigir falhas críticas e criar uma camada real de proteção para contas online, dados pessoais e para sua família (filhos).</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/5542984187790?text=Ol%C3%A1%2C%20quero%20agendar%20um%20diagn%C3%B3stico%20de%20Blindagem%20Digital." target="_blank">Proteger Família</a>
+            <a class="btn btn-secondary" href="#servicos">Conhecer Serviços</a>
+          </div>
         </div>
-        <div class="location-badge">Castro - PR</div>
-    </div>
-</header>
+        <div class="hero-card">
+          <h2>Blindagem Digital MJ INFO</h2>
+          <div class="check"><strong>✓</strong> Diagnóstico de exposição em vazamentos e senhas comprometidas</div>
+          <div class="check"><strong>✓</strong> Saneamento de e-mails, contas críticas e autenticação em duas etapas</div>
+          <div class="check"><strong>✓</strong> Cofre de senhas no computador e celular</div>
+          
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-    <div class="container hero-content">
-        <h1>Tecnologia com Propósito & Segurança Digital</h1>
-        <p>Consultoria cristã de proteção digital familiar e soluções de TI de alta performance em Castro e região.</p>
-        <a href="#familia" class="btn btn-main">Proteger Família</a>
-        <a href="#ti" class="btn btn-outline">Serviços de TI</a>
-    </div>
-</section>
-
-<section id="familia" class="container">
-    <h2>Proteção Digital Familiar</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>🛡️ Diagnóstico de Risco</h3>
-            <p>Mapeamento completo da exposição digital da sua casa.</p>
+    <section id="servicos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Serviços guiados pelo conceito Farol</h2>
+          <p>Assim como um farol ilumina perigos antes que eles apareçam, a MJ INFO identifica riscos digitais, orienta decisões seguras e fortalece sua proteção antes do problema acontecer.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🗼</div>
+            <h3>Blindagem Digital</h3>
+            <p>Serviço premium para proteger contas online, senhas, CPF, e-mails, dados financeiros e documentos importantes.</p>
             <ul>
-                <li>Análise de vulnerabilidades na rede Wi-Fi e dispositivos móveis.</li>
-                <li>Avaliação dos hábitos de uso e exposição de cada membro da família.</li>
-                <li>Relatório técnico com recomendações imediatas.</li>
+              <li>Check-up de exposição digital</li>
+              <li>Saneamento de contas críticas</li>
+              <li>Cofre de senhas no computador e celular</li>
             </ul>
-        </div>
-        <div class="card">
-            <h3>📱 Controle Parental</h3>
-            <p>Configuração técnica profissional de barreiras e monitoramento.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔐</div>
+            <h3>Contas Online Seguras</h3>
+            <p>Proteção de e-mails, redes sociais, bancos, WhatsApp e contas críticas.</p>
             <ul>
-                <li>Instalação e ajuste fino de softwares parentais (Qustodio, AirDroid).</li>
-                <li>Filtros de conteúdo e restrições por faixa etária em TVs e computadores.</li>
-                <li>Criação de perfis seguros e monitoramento consciente.</li>
+              <li>Senhas fortes</li>
+              <li>Autenticação em duas etapas</li>
+              <li>Recuperação e prevenção contra invasões</li>
             </ul>
-        </div>
-        <div class="card">
-            <h3>🤝 Mentoria</h3>
-            <p>Capacitação para uma gestão familiar saudável e equilibrada.</p>
+          </div>
+          <div class="card">
+            <div class="icon">👨‍👩‍👧</div>
+            <h3>Proteção Familiar</h3>
+            <p>Configuração de controles e orientação para uso seguro da internet por crianças e adolescentes.</p>
             <ul>
-                <li>Estratégias baseadas em princípios para gestão de tempo de tela e diálogos.</li>
-                <li>Orientação contínua conforme os filhos crescem e as tecnologias mudam.</li>
+              <li>Controle parental</li>
+              <li>Filtros por idade</li>
+              <li>Tempo de tela e regras de uso</li>
             </ul>
+          </div>
+          <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Prevenção contra Golpes</h3>
+            <p>Treinamento simples para identificar links falsos, golpes de WhatsApp, PIX e engenharia social.</p>
+            <ul>
+              <li>Boas práticas</li>
+              <li>Checklist de segurança</li>
+              <li>Orientação preventiva</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">☁️</div>
+            <h3>Backup & Recuperação</h3>
+            <p>Proteção de documentos, fotos, arquivos importantes e dados de empresas.</p>
+            <ul>
+              <li>Backup em nuvem</li>
+              <li>Monitoramento básico</li>
+              <li>Restauração sob demanda</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>TI para Pequenas Empresas</h3>
+            <p>Suporte técnico, organização de computadores, rede, e-mails, licenças e equipamentos.</p>
+            <ul>
+              <li>Manutenção preventiva</li>
+              <li>Licenciamento Microsoft</li>
+              <li>Orientação de compras</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="icon">📘</div>
+            <h3>Educação Digital</h3>
+            <p>Guias, palestras e orientações para pais, escolas, igrejas e pequenos grupos.</p>
+            <ul>
+              <li>Material educativo</li>
+              <li>Reuniões online ou presenciais</li>
+              <li>Plano familiar personalizado</li>
+            </ul>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="ti" style="background: #f8fafc;">
-    <div class="container">
-        <h2>Serviços de TI Profissionais</h2>
-        <div class="grid">
-            <div class="card" style="background: white;">
-                <h3>☁️ Backup em Nuvem</h3>
-                <p>Proteção de dados contra perdas, falhas e ataques.</p>
-                <ul>
-                    <li>Backup automático e seguro</li>
-                    <li>Relatórios e monitoramento</li>
-                    <li>Restauração sob demanda</li>
-                </ul>
-            </div>
-            <div class="card" style="background: white;">
-                <h3>📜 Licenciamento Microsoft</h3>
-                <p>Regularização e adequação de licenças (Windows, Office, Visio).</p>
-                <ul>
-                    <li>Orientação em boas práticas corporativas</li>
-                    <li>Redução de riscos corporativos</li>
-                    <li>Solicite sua cotação</li>
-                </ul>
-            </div>
-            <div class="card" style="background: white;">
-                <h3>🖱️ Peças e Periféricos</h3>
-                <p>Venda sob orientação técnica, com foco em compatibilidade e custo-benefício.</p>
-                <ul>
-                    <li>SSD, RAM, fontes e cabos</li>
-                    <li>Teclados, mouses e acessórios</li>
-                    <li>Pedido rápido e pronta entrega</li>
-                </ul>
-            </div>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>O que inclui a Blindagem Digital</h2>
+          <p>Um atendimento consultivo, prático e acompanhado, pensado para reduzir riscos reais de invasões, golpes, perda de acesso e uso indevido de dados pessoais.</p>
         </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="footer-logo">
-            <img src="logo_premium.png" alt="MJ Proteção Digital Footer">
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🔎</div>
+            <h3>Diagnóstico de Exposição</h3>
+            <p>Análise de vazamentos envolvendo CPF, e-mails e senhas, com relatório das vulnerabilidades ativas encontradas.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔐</div>
+            <h3>Saneamento de Contas Críticas</h3>
+            <p>Troca assistida de senhas dos e-mails principais e ativação de camadas fortes de proteção, como Passkeys e autenticação em duas etapas.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🧰</div>
+            <h3>Cofre de Senhas</h3>
+            <p>Configuração de cofre de senhas no computador e celular, com treinamento prático para o cliente parar de decorar ou repetir senhas.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🏦</div>
+            <h3>Proteção Financeira</h3>
+            <p>Orientação para bloqueio preventivo de consultas de crédito e auditoria de possíveis contas ou empréstimos indevidos via Banco Central Registrato.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📄</div>
+            <h3>Proteção Documental</h3>
+            <p>Organização de cuidados com documentos, dados sensíveis, acessos importantes e rotinas de recuperação em caso de perda ou tentativa de golpe.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🚨</div>
+            <h3>Plano de Emergência</h3>
+            <p>Entrega de protocolo físico com orientações essenciais e chaves de recuperação mestres guardadas de forma segura.</p>
+          </div>
         </div>
-        <p><strong>Miguel Junior Prestes</strong> - Consultor e Atalaia Digital</p>
-        <p>📱 WhatsApp: <a href="https://wa.me/5542984187790" class="footer-link">(42) 98418-7790</a></p>
-        <p>✉️ E-mail: <a href="mailto:comercial@mjinfo.tec.br" class="footer-link">comercial@mjinfo.tec.br</a></p>
-        <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-muted);">© 2026 mjinfo.tec.br - Todos os direitos reservados.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="panel">
+          <h3>Para famílias</h3>
+          <p>Ideal para pais que desejam proteger os filhos sem depender apenas de bloqueios. O foco é unir tecnologia, diálogo e orientação prática.</p>
+          <ul>
+            <li>Configuração segura de celulares, TVs e computadores</li>
+            <li>Controle parental e perfis por idade</li>
+            <li>Proteção contra exposição, golpes e conteúdo inadequado</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Para empresas</h3>
+          <p>Ideal para negócios que usam computadores, WhatsApp, e-mail e arquivos importantes, mas ainda não possuem uma estrutura de segurança organizada.</p>
+          <ul>
+            <li>Backup, antivírus, contas e permissões</li>
+            <li>Treinamento contra golpes digitais</li>
+            <li>Suporte técnico e orientação de infraestrutura</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Metodologia de Atendimento</h2>
+          <p>Um processo simples, consultivo e objetivo para entender sua realidade digital e entregar um diagnóstico prático.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">1</div>
+            <h3>Sessão Inicial</h3>
+            <p>Conversa guiada para entender contas utilizadas, rotina digital, dispositivos, exposição familiar e principais preocupações.</p>
+          </div>
+          <div class="card">
+            <div class="icon">2</div>
+            <h3>Mapeamento dos Riscos</h3>
+            <p>Análise dos pontos frágeis, possíveis vazamentos, senhas repetidas, ausência de autenticação forte e riscos de exposição.</p>
+          </div>
+          <div class="card">
+            <div class="icon">3</div>
+            <h3>Entrega do Diagnóstico</h3>
+            <p>Apresentação das descobertas, prioridades de correção e próximos passos para fortalecer sua blindagem digital.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-final">
+          <h2>Quer se proteger melhor online? Nos procure agora mesmo.</h2>
+          <p>Agende um diagnóstico inicial e receba uma orientação clara sobre os principais riscos digitais e os primeiros passos para aumentar sua segurança pessoal e familiar.</p>
+          <a class="btn btn-primary" href="https://wa.me/5542984187790?text=Ol%C3%A1%2C%20quero%20proteger%20minha%20fam%C3%ADlia%2C%20minhas%20contas%20ou%20minha%20empresa%20com%20a%20Blindagem%20Digital." target="_blank">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© 2026 MJ INFORMÁTICA — Segurança Digital & TI</div>
+      <div>WhatsApp: (42) 98418-7790 · comercial@mjinfo.tec.br</div>
     </div>
-</footer>
-
-<a href="https://wa.me/5542984187790?text=Olá Miguel, gostaria de agendar uma consultoria em Castro." class="whatsapp-float" target="_blank">
-    💬 Agendar Diagnóstico
-</a>
-
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/5542984187790?text=Ol%C3%A1%2C%20quero%20agendar%20um%20diagn%C3%B3stico%20de%20Blindagem%20Digital." target="_blank">💬 Agendar Diagnóstico</a>
 </body>
 </html>
