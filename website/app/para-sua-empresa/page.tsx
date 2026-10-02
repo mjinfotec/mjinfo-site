@@ -1,0 +1,10 @@
+import { AudiencePage } from "@/components/AudiencePage";
+import { Laptop, DatabaseBackup, Network, Headset } from "lucide-react";
+export const metadata = {title:"Para sua empresa",description:"Equipamentos, licenciamento, backup corporativo, infraestrutura e suporte remoto para pequenas e médias empresas em Castro-PR e região."};
+export default function Page() { return <AudiencePage brands={["Dell", "Logitech", "Microsoft", "Acer", "Lenovo"]} label="Para sua empresa · MJ INFO" title="Tecnologia alinhada ao seu negócio. Investimento com critério." intro="Para pequenas e médias empresas que precisam de um parceiro confiável, mesmo sem uma equipe interna de TI estruturada. Começamos pelo que sua operação precisa hoje." items={[
+ {icon:Laptop,title:"Equipamentos & licenciamento",text:"Revenda com orientação técnica para reduzir compras inadequadas e ajudar a padronizar o ambiente.",points:["Escolha conforme uso e orçamento","Compatibilidade e possibilidades de expansão","Licenças adequadas à necessidade"]},
+ {icon:DatabaseBackup,title:"Backup & continuidade",text:"Implantação e manutenção de backup corporativo, com planejamento das cópias e da recuperação.",points:["Avaliação dos dados e das prioridades","Rotinas e retenção definidas no escopo","Verificação e testes conforme contratação"]},
+ {icon:Network,title:"Infraestrutura & segurança",text:"Organização do ambiente de TI para reduzir falhas e dar mais previsibilidade à operação.",points:["Redes e equipamentos","Organização de acessos","Planejamento de melhorias"]},
+ {icon:Headset,title:"Suporte técnico",text:"Atendimento remoto especializado para investigar problemas e orientar a continuidade do trabalho.",points:["Suporte pontual ou acompanhamento contratado","Condições de atendimento combinadas","Explicação do problema e próximos passos"]}
+ ]} note="Conte se precisa comprar, licenciar, proteger seus dados ou organizar a TI. Vamos definir a prioridade juntos." message="Olá, quero conversar sobre tecnologia para minha empresa."/>; }
+

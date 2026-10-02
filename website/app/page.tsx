@@ -1,0 +1,15 @@
+import Link from "next/link";
+
+import { ArrowUpRight, Building2, UserRound, HeartHandshake, ShieldCheck, Laptop, DatabaseBackup } from "lucide-react";
+export default function HomePage() {
+ return <div className="mj-home">
+  <section className="mj-hero container-premium"><div className="mj-hero-copy"><p className="mj-kicker"><span/> Tecnologia com confiança</p><h1>Boas decisões.<br/>Tecnologia que<br/><em>faz sentido.</em></h1><p className="mj-lead">Para o seu negócio. Para a sua vida. Orientação próxima para escolher melhor, proteger dados e usar a tecnologia com mais segurança.</p><div className="mj-actions"><Link href="/para-sua-empresa" className="mj-button">Para minha empresa <ArrowUpRight size={18}/></Link><Link href="/para-voce" className="mj-text-link">Conhecer a proteção digital <ArrowUpRight size={17}/></Link></div><p className="mj-location">Castro-PR e região <span>·</span> Atendimento remoto</p></div>
+  <div className="mj-hero-art" aria-label="Equipamentos, dados e segurança conectados pela orientação da MJ INFO" role="img"><div className="mj-orbit orbit-one"/><div className="mj-orbit orbit-two"/><div className="mj-art-center"><img src="/images/logo-mj-info.png" alt=""/><span>Escolhas com<br/><strong>confiança.</strong></span></div><div className="mj-art-label art-equipment"><Laptop size={23}/><span>Equipamentos<strong>O que você precisa.</strong></span></div><div className="mj-art-label art-backup"><DatabaseBackup size={23}/><span>Seus dados<strong>Continuidade planejada.</strong></span></div><div className="mj-art-label art-security"><ShieldCheck size={23}/><span>Proteção digital<strong>Cuidado em cada acesso.</strong></span></div><span className="mj-art-dot dot-one"/><span className="mj-art-dot dot-two"/></div>
+  </section>
+  <section className="mj-audiences container-premium" aria-label="Escolha seu caminho"><div className="mj-section-intro"><p className="mj-kicker">Um parceiro. Diferentes necessidades.</p><h2>Como podemos ajudar?</h2></div><div className="mj-audience-grid">{[{title:"Para sua empresa",text:"Equipamentos, licenciamento, backup e TI com orientação para o seu negócio.",href:"/para-sua-empresa",icon:Building2},{title:"Para você",text:"Contas, celular e vida digital com mais organização, privacidade e segurança.",href:"/para-voce",icon:UserRound},{title:"Para sua família",text:"Diálogo e orientação para pais e adolescentes no mundo conectado.",href:"/para-sua-familia",icon:HeartHandshake}].map(item => <Link className="mj-audience" key={item.href} href={item.href}><item.icon size={27}/><h3>{item.title}</h3><p>{item.text}</p><span>Explorar soluções <ArrowUpRight size={17}/></span></Link>)}</div></section>
+  <section className="mj-trust container-premium"><div><strong className="mj-trust-brand">MJ INFO</strong><span>Experiência aplicada em tecnologia.<br/>Confiança construída em cada entrega.</span></div><p>Entender antes de indicar.<br/><b>Esse é o compromisso da MJ INFO.</b></p><Link href="/nossos-diferenciais" className="mj-text-link">Nossos diferenciais <ArrowUpRight size={17}/></Link></section>
+ </div>;
+}
+
+
+
