@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | MJ INFO"
   },
   description:
-    "Equipamentos, licenciamento, backup corporativo e suporte remoto em Castro-PR e região. MJ Proteção Digital para pessoas, pais e adolescentes.",
+    "Equipamentos, licenças, backup, sistemas, automação e dados com IA para empresas em Castro-PR e região. Proteção digital para pessoas e famílias.",
   keywords: [
     "protecao digital em Castro PR",
     "seguranca digital familiar",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MJ INFO | Tecnologia para Empresas e Proteção Digital",
     description:
-      "Blindagem digital, protecao familiar online e consultoria tecnologica humanizada para familias e pequenas empresas.",
+      "Tecnologia para empresas: equipamentos, licenciamento, backup, sistemas, automação e análise de dados com IA. Proteção digital para pessoas e famílias.",
     url: "https://mjinfo.tec.br",
     siteName: "MJ INFO",
     locale: "pt_BR",
